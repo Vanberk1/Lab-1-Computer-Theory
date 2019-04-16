@@ -1,36 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct node {
-    int nBaseEqui;
-    struct node* next;
-} Node;
-typedef Node* List;
-
-List addNode(int x)
-{
-    List aux;
-    aux = (Node*)malloc(sizeof(Node));
-
-    aux->nBaseEqui = x;
-    aux->next = NULL;
-
-    return aux;
-}
-
-void Push(List list, int x) {
-    List aux, nNode;
-    nNode = addNode(x);
-    if(list == NULL) {
-        list = nNode;
-    }
-    else {
-        aux = list;
-        while(aux->next != NULL)
-            aux = aux->next;
-        aux->next = nNode;
-    }
-}
+#include "list.h"
 
 FILE* SelectFile() {
     char* fileName = (char*) malloc(sizeof(char));
@@ -49,8 +19,8 @@ FILE* SelectFile() {
 int main()
 {
     List transformedDNA = NULL;
-    Push(transformedDNA, 3);
-    Push(transformedDNA, 5);
+    transformedDNA = Push(transformedDNA, 3);
+    transformedDNA = Push(transformedDNA, 5);
 
     List aux = transformedDNA;
     while(aux != NULL) {
