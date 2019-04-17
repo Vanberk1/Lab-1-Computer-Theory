@@ -2,16 +2,16 @@
 
 int main()
 {
-	char flag;	
+	char flag;
 
 	do{
+        system("clear||cls");
 		List dnaList = GenerateEquivalentList();
-   
+
    		int initialState = 0;
-   		int actualState = 0;
    		int finalState = 4;
 
-   		HumanOrMutant(dnaList,initialState,actualState,finalState);
+   		HumanOrMutant(dnaList, initialState, finalState);
 
   		printf("Desea probar otro archivo S/N?\n");
   		scanf(" %c", &flag);
@@ -20,13 +20,3 @@ int main()
 
 	return 0;
 }
-
-    /*List aux = dnaList;
-    while(aux->next != NULL) {
-        aux = aux->next;
-        printf("%d", aux->data);
-    }
-
-    printf("\n");*/
-
-    //aux = NULL;
